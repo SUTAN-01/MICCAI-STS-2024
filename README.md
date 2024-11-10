@@ -1,26 +1,50 @@
-# MICCAI-STS-2024
-SemiTeethSegChallenge
 
-环境搭建
-1.win+R 打开终端界面（这里也可以直接打开Anaconda Prompt）
- 在终端命令行中输入：conda env list
- 既可查看本地已经存在几个虚拟环境。base是基础环境变量，安装了anaconda之后都会有一个base虚拟环境。我们首先进入base环境：
- 在终端命令行中输入：conda activate base
- 进入环境后我们在anaconda中为我们的detectron2项目创建虚拟环境：
- 在终端命令行中输入：conda create -n detectron_env(自定义你的环境变量的名称，我这里取名为detectron_env) python=3.8
-2.为了加速我们的训练，我们往往在训练过程中调用GPU，因此需要下载对应cuda版本的pytorch（这里的detectron2是基于pytorch来实现的）
-在终端命令行中输入：conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=11.1 -c pytorch -c conda-forge
-3.在终端命令行中输入：pip install cython 
-在终端命令行中输入：pip install opencv-python
-（在对应的环境变量下pip install，进入的方式是：activate 你的环境变量名称）
-4.打开终端后cd到项目所在的主目录下，我的项目文件名称为DAE-Net：
-在终端命令行中输入：cd DAE-Net
-进入到包含项目代码的主目录中后
-在终端命令行中输入：pip install -e .
-等待所有依赖安装好
+Here are a few projects that are built on detectron2.
+They are examples of how to use detectron2 as a library, to make your projects more
+maintainable.
 
-主干网络在\DAE-Net\detectron2\modeling\backbone\resnet.py中
+## Projects by Facebook
 
-运行训练程序：python main.py
-测试程序：python predict.py
+Note that these are research projects, and therefore may not have the same level
+of support or stability as detectron2.
 
++ [DensePose: Dense Human Pose Estimation In The Wild](DensePose)
++ [Scale-Aware Trident Networks for Object Detection](TridentNet)
++ [TensorMask: A Foundation for Dense Object Segmentation](TensorMask)
++ [Mesh R-CNN](https://github.com/facebookresearch/meshrcnn)
++ [PointRend: Image Segmentation as Rendering](PointRend)
++ [Momentum Contrast for Unsupervised Visual Representation Learning](https://github.com/facebookresearch/moco/tree/master/detection)
++ [DETR: End-to-End Object Detection with Transformers](https://github.com/facebookresearch/detr/tree/master/d2)
++ [Panoptic-DeepLab: A Simple, Strong, and Fast Baseline for Bottom-Up Panoptic Segmentation](Panoptic-DeepLab)
++ [D2Go (Detectron2Go)](https://github.com/facebookresearch/d2go), an end-to-end production system for training and deployment for mobile platforms.
++ [Pointly-Supervised Instance Segmentation](PointSup)
++ [Unbiased Teacher for Semi-Supervised Object Detection](https://github.com/facebookresearch/unbiased-teacher)
++ [Rethinking "Batch" in BatchNorm](Rethinking-BatchNorm/)
++ [Per-Pixel Classification is Not All You Need for Semantic Segmentation](https://github.com/facebookresearch/MaskFormer)
++ [Exploring Plain Vision Transformer Backbones for Object Detection](ViTDet/)
++ [MViTv2: Improved Multiscale Vision Transformers for Classification and Detection](MViTv2/)
+
+
+## External Projects
+
+External projects in the community that use detectron2:
+
+<!--
+ - If you want to contribute, note that:
+ -  1. please add your project to the list and try to use only one line
+ -  2. the project must provide models trained on standard datasets
+
+ Projects are *roughly sorted* by: "score = PaperCitation * 5 + Stars",
+ where PaperCitation equals the citation count of the paper, if the project is an *official* implementation of the paper.
+ PaperCitation equals 0 otherwise.
+ -->
+
++ [AdelaiDet](https://github.com/aim-uofa/adet), a detection toolbox including FCOS, BlendMask, etc.
++ [CenterMask](https://github.com/youngwanLEE/centermask2)
++ [Res2Net backbones](https://github.com/Res2Net/Res2Net-detectron2)
++ [VoVNet backbones](https://github.com/youngwanLEE/vovnet-detectron2)
++ [FsDet](https://github.com/ucbdrive/few-shot-object-detection), Few-Shot Object Detection.
++ [Sparse R-CNN](https://github.com/PeizeSun/SparseR-CNN)
++ [BCNet](https://github.com/lkeab/BCNet), a bilayer decoupling instance segmentation method.
++ [DD3D](https://github.com/TRI-ML/dd3d), A fully convolutional 3D detector.
++ [detrex](https://github.com/IDEA-Research/detrex), a detection toolbox for transformer-based detection algorithms including Deformable-DETR, DAB-DETR, DN-DETR, DINO, etc.
