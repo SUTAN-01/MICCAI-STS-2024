@@ -14,4 +14,4 @@
 训练 main.py
 测试 predict.py
 
-主干网络在detectron2.7z中
+主干网络在detectron2中
